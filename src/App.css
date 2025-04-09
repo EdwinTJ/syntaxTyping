@@ -1,0 +1,95 @@
+:root {
+  --flesh: #ffe3d7;
+  --white: #ffffff;
+  --cornsilk: #fbfddb;
+  --powder-blue: #bdeade;
+  --pale-robin-egg: #9ee1d0;
+
+  /* Extended colors */
+  --flesh-dark: #ffd0ba;
+  --cornsilk-dark: #f0f2c0;
+  --powder-blue-dark: #a0d0c0;
+  --pale-robin-egg-dark: #50c2a8;
+
+  /* Text colors for code */
+  --code-light: #d1d5db;
+  --code-dark: #374151;
+  --code-bg: #f8f9fa;
+
+  /* Highlight colors */
+  --correct-bg: #e6f7f2;
+  --incorrect-bg: #fff1ec;
+  --current-bg: #d5f2e9;
+  --correct-text: #50c2a8;
+  --incorrect-text: #ff9f7f;
+}
+
+body {
+  font-family: "Inter", "Roboto", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Remove all duplicate class definitions */
+
+/* Add keyframe animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Code character styles */
+.code-character {
+  display: inline-block;
+  transition: all 150ms;
+  padding: 0.125rem;
+  border-radius: 0.25rem;
+}
+
+.code-character.untyped {
+  color: var(--code-light);
+}
+
+.code-character.correct {
+  color: var(--correct-text);
+  background-color: var(--correct-bg);
+}
+
+.code-character.incorrect {
+  color: var(--incorrect-text);
+  background-color: var(--incorrect-bg);
+}
+
+.code-character.current {
+  color: var(--code-dark);
+  background-color: var(--current-bg);
+  border-bottom: 2px solid var(--pale-robin-egg);
+  font-weight: bold;
+}
