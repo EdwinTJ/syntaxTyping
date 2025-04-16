@@ -60,6 +60,14 @@ const CodeDisplay = ({
             );
           }
 
+          // Handle tabs
+          if (char === "\t") {
+            return (
+              <span key={index} style={style} className="inline-block w-4">
+                &nbsp;&nbsp;
+              </span>
+            );
+          }
           // Handle spaces
           if (char === " ") {
             return (

@@ -3,7 +3,7 @@ import CodeTypeApp from "./components/CodeTypeApp/index";
 
 function App() {
   return (
-    <div className="app-container">
+    <div>
       <CodeTypeApp />
     </div>
   );

@@ -20,7 +20,7 @@ export const programmingLanguages: { [key: string]: ProgrammingLanguage } = {
         },
         {
           prompt: "Basic if statement",
-          code: "if 5 > 2:\n  print('Five is greater than two!')",
+          code: "if 5 > 2:\n\tprint('Five is greater than two!')",
           timeLimit: 60,
           expectedTime: 25,
         },
@@ -28,13 +28,13 @@ export const programmingLanguages: { [key: string]: ProgrammingLanguage } = {
       intermediate: [
         {
           prompt: "Define a function",
-          code: "def greet(name):\n  print('Hello, ' + name)",
+          code: "def greet(name):\n\tprint('Hello, ' + name)",
           timeLimit: 60,
           expectedTime: 30,
         },
         {
           prompt: "Use a for loop",
-          code: "for i in range(5):\n  print(i)",
+          code: "for i in range(5):\n\tprint(i)",
           timeLimit: 60,
           expectedTime: 30,
         },
@@ -54,13 +54,13 @@ export const programmingLanguages: { [key: string]: ProgrammingLanguage } = {
         },
         {
           prompt: "Handle exceptions with try-except",
-          code: "try:\n  result = 10 / 0\nexcept ZeroDivisionError:\n  print('Cannot divide by zero')",
+          code: "try:\n  result = 10 / 0\nexcept ZeroDivisionError:\n\tprint('Cannot divide by zero')",
           timeLimit: 120,
           expectedTime: 60,
         },
         {
           prompt: "Read from a file",
-          code: "with open('file.txt', 'r') as f:\n  content = f.read()",
+          code: "with open('file.txt', 'r') as f:\n\tcontent = f.read()",
           timeLimit: 90,
           expectedTime: 40,
         },
@@ -87,7 +87,7 @@ export const programmingLanguages: { [key: string]: ProgrammingLanguage } = {
         },
         {
           prompt: "Basic if statement",
-          code: "if (5 > 2) {\n  console.log('Five is greater than two!');\n}",
+          code: "if (5 > 2) {\n\tconsole.log('Five is greater than two!');\n}",
           timeLimit: 60,
           expectedTime: 25,
         },
@@ -95,13 +95,13 @@ export const programmingLanguages: { [key: string]: ProgrammingLanguage } = {
       intermediate: [
         {
           prompt: "Define a function",
-          code: "function greet(name) {\n  console.log('Hello, ' + name);\n}",
+          code: "function greet(name) {\n\tconsole.log('Hello, ' + name);\n}",
           timeLimit: 60,
           expectedTime: 30,
         },
         {
           prompt: "Use a for loop",
-          code: "for (let i = 0; i < 5; i++) {\n  console.log(i);\n}",
+          code: "for (let i = 0; i < 5; i++) {\n\tconsole.log(i);\n}",
           timeLimit: 60,
           expectedTime: 30,
         },
@@ -121,13 +121,13 @@ export const programmingLanguages: { [key: string]: ProgrammingLanguage } = {
         },
         {
           prompt: "Handle errors with try-catch",
-          code: "try {\n  const result = 10 / 0;\n  console.log(result);\n} catch (error) {\n  console.error('Cannot divide by zero');\n}",
+          code: "try {\n  const result = 10 / 0;\n\tconsole.log(result);\n} catch (error) {\n\tconsole.error('Cannot divide by zero');\n}",
           timeLimit: 120,
           expectedTime: 60,
         },
         {
           prompt: "Read JSON data",
-          code: "fetch('data.json')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error('Error:', error));",
+          code: "fetch('data.json')\n\t.then(response => response.json())\n\t.then(data => console.log(data))\n\t.catch(error => console.error('Error:', error));",
           timeLimit: 120,
           expectedTime: 60,
         },

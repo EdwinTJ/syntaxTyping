@@ -21,16 +21,50 @@ const TypingArea = ({
   currentExercise,
   timeoutMessage,
 }: TypingAreaProps) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Tab") {
+      e.preventDefault(); // Prevent default tab behavior
+
+      // Get current cursor position
+      const target = e.target as HTMLTextAreaElement;
+      const start = target.selectionStart;
+      const end = target.selectionEnd;
+
+      // Create a new input value with tab character inserted
+      const newValue =
+        userInput.substring(0, start) + "\t" + userInput.substring(end);
+
+      // Create a synthetic change event
+      const syntheticEvent = {
+        target: {
+          value: newValue,
+        },
+      } as React.ChangeEvent<HTMLTextAreaElement>;
+
+      // Call the input change handler
+      handleInputChange(syntheticEvent);
+
+      // Set new cursor position (after the tab)
+      setTimeout(() => {
+        if (inputRef.current) {
+          inputRef.current.selectionStart = start + 1;
+          inputRef.current.selectionEnd = start + 1;
+        }
+      }, 0);
+    }
+  };
+
   return (
     <div className="mb-6 relative">
       <textarea
         ref={inputRef}
         value={userInput}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
         className="w-full p-4 border rounded font-mono text-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2"
         style={{
-          color: "transparent",
-          caretColor: colors.correct,
+          color: "transparent", // Make the text invisible in the textarea
+          caretColor: colors.correct, // Color of the cursor
           borderColor: completed ? colors.correct : colors.currentChar,
           boxShadow: `0 0 8px rgba(189, 234, 222, 0.3)`,
           height: `${Math.max(
